@@ -1,4 +1,4 @@
-"""Special methods for Test application api working"""
+"""Special methods for working with app api"""
 import requests
 import allure
 
@@ -29,8 +29,3 @@ class Api:
     def list_template(self):
         """List all currently uploaded templates with GET request"""
         return requests.get(f'{self.base_url}/api/v1/templates')
-
-    @allure.step('get info from resource')
-    def get_information_from_resource(self):
-        """Get information from tesitng resource"""
-        return requests.get(f'{self.base_url}')
