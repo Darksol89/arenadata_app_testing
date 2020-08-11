@@ -1,3 +1,4 @@
+"""Testing of uploading different templates"""
 import pytest
 import allure
 
@@ -10,7 +11,7 @@ def test_default_upload_template(api_client, get_template_directory, template_fi
     assert 'Template successfully uploaded' in responce.text
 
 
-@allure.title('Upload template with custon template id')
+@allure.title('Upload template with custom template id')
 @pytest.mark.parametrize('tmpl_id', ['test_google_01'], ids=['Custom_Template_id'])
 @pytest.mark.parametrize('template_file', ['google_template.yml'], ids=['custom_templ_file'])
 def test_upload_template_with_custom_params(api_client, get_template_directory, tmpl_id, template_file):

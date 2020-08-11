@@ -1,3 +1,4 @@
+"""Testing of install different templates"""
 import pytest
 import allure
 
@@ -20,19 +21,3 @@ def test_install_not_exist_template(api_client, get_template_directory, random_t
 
     assert not responce.ok
     assert f'No template with tmpl_id={random_template_name} found!' in responce.text
-
-
-@allure.title('Install template without link')
-@pytest.mark.parametrize('template_file', ['yandex_template.yml'])
-def test_install_template(api_client, get_template_directory, template_file):
-    api_client.upload_template(template_file=template_file)
-    template_name = template_file.split(sep='.')
-    responce_post = api_client.install_template(template=template_name[0])
-    responce_get = api_client.get_information_from_resource()
-    #print(responce_post.status_code)
-    #print(responce_post.text)
-    print(responce_get.json())
-
-
-    # assert responce.ok
-    # assert f'Template with tmpl_id={template_name[0]} successfully installed!' in responce.text

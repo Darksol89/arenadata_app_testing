@@ -1,3 +1,4 @@
+"""Testing of deleting template"""
 import pytest
 import allure
 
