@@ -10,7 +10,6 @@ class BasePage:
         """Initialize web driver"""
         self.driver: WebDriver = driver
 
-
     def _click_to_element(self, locator):
         """Click to web element"""
         try:
