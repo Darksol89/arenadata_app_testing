@@ -21,7 +21,7 @@ def test_available_button_in_main_page(browser_driver, api_client,
 
 
 @allure.title('Check of unavailable button in Main Page site')
-@pytest.mark.parametrize('template_file', ['yandex_template_no_link.yml'])
+@pytest.mark.parametrize('template_file', ['template_no_link.yml'])
 def test_unavailable_button_in_main_page(browser_driver, api_client,
                                          get_template_directory, template_file):
     api_client.upload_template(template_file=template_file)
